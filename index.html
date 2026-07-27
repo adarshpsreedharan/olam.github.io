@@ -1,366 +1,373 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>OLAM by Plasseril | Professional Website</title>
+```
+<title>OLAM by Plasseril | Official Website</title>
 
-    <style>
-        /* ===== GENERAL STYLES ===== */
+<style>
+    /* ===== GENERAL STYLES ===== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f8f9fa;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-        /* ===== NAVIGATION ===== */
+    /* ===== NAVIGATION ===== */
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #176b5b;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-weight: bold;
+        color: #333;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #176b5b;
+    }
+
+    /* ===== HERO SECTION ===== */
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 20px 60px;
+        background: linear-gradient(135deg, #e8f5f1, #ffffff);
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: #176b5b;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 13px 28px;
+        background: #176b5b;
+        color: white;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background: #0e4d41;
+        transform: translateY(-2px);
+    }
+
+    /* ===== GENERAL SECTION ===== */
+
+    section {
+        padding: 80px 10%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 40px;
+        color: #176b5b;
+    }
+
+    /* ===== ABOUT ===== */
+
+    .about {
+        background: white;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    /* ===== SERVICES ===== */
+
+    .services {
+        background: #f8f9fa;
+    }
+
+    .service-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .service-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+        color: #176b5b;
+        margin-bottom: 15px;
+    }
+
+    /* ===== CONTACT ===== */
+
+    .contact {
+        background: white;
+        text-align: center;
+    }
+
+    .contact p {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .contact-buttons {
+        margin-top: 25px;
+    }
+
+    .contact-buttons a {
+        margin: 5px;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+        background: #176b5b;
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+
+    @media (max-width: 768px) {
 
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #176b5b;
+            padding: 15px 5%;
         }
 
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            font-weight: bold;
-            color: #333;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #176b5b;
-        }
-
-        /* ===== HERO SECTION ===== */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 60px;
-            background: linear-gradient(135deg, #e8f5f1, #ffffff);
-        }
-
-        .hero-content {
-            max-width: 800px;
+            display: none;
         }
 
         .hero h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-            color: #176b5b;
+            font-size: 38px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 13px 28px;
-            background: #176b5b;
-            color: white;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #0e4d41;
-            transform: translateY(-2px);
-        }
-
-        /* ===== GENERAL SECTION ===== */
-
-        section {
-            padding: 80px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 35px;
-            margin-bottom: 40px;
-            color: #176b5b;
-        }
-
-        /* ===== ABOUT ===== */
-
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        /* ===== SERVICES ===== */
-
-        .services {
-            background: #f8f9fa;
+            font-size: 17px;
         }
 
         .service-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr;
         }
 
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
+        section {
+            padding: 60px 7%;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
+        .section-title {
+            font-size: 30px;
         }
+    }
+</style>
+```
 
-        .service-card h3 {
-            color: #176b5b;
-            margin-bottom: 15px;
-        }
-
-        /* ===== CONTACT ===== */
-
-        .contact {
-            background: white;
-            text-align: center;
-        }
-
-        .contact p {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .contact-buttons {
-            margin-top: 25px;
-        }
-
-        .contact-buttons a {
-            margin: 5px;
-        }
-
-        /* ===== FOOTER ===== */
-
-        footer {
-            background: #176b5b;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        /* ===== MOBILE RESPONSIVE ===== */
-
-        @media (max-width: 768px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .service-container {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 7%;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- ===== NAVIGATION ===== -->
+```
+<!-- ===== NAVIGATION ===== -->
 
-    <nav>
-        <div class="logo">Your Name</div>
+<nav>
+    <div class="logo">OLAM by Plasseril</div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-
-    <!-- ===== HOME ===== -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <h1>Welcome to My Website</h1>
-
-            <p>
-                Hello! I'm Your Name. Welcome to my personal website.
-                Discover more about me, my work, and the services I provide.
-            </p>
-
-            <a href="#about" class="button">
-                Learn More
-            </a>
-
-        </div>
-
-    </section>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
 
-    <!-- ===== ABOUT ===== -->
+<!-- ===== HOME ===== -->
 
-    <section class="about" id="about">
+<section class="hero" id="home">
 
-        <h2 class="section-title">
-            About Me
-        </h2>
+    <div class="hero-content">
 
-        <div class="about-content">
-
-            <p>
-                Welcome to my website. I am a passionate professional
-                dedicated to providing quality work and meaningful
-                solutions. This section can be customized with your
-                personal information, qualifications, experience,
-                achievements, or professional background.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ===== SERVICES ===== -->
-
-    <section class="services" id="services">
-
-        <h2 class="section-title">
-            My Services
-        </h2>
-
-        <div class="service-container">
-
-            <div class="service-card">
-                <h3>Service One</h3>
-                <p>
-                    Add a description of your first service here.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <h3>Service Two</h3>
-                <p>
-                    Add a description of your second service here.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <h3>Service Three</h3>
-                <p>
-                    Add a description of your third service here.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ===== CONTACT ===== -->
-
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">
-            Contact Me
-        </h2>
+        <h1>Welcome to OLAM by Plasseril</h1>
 
         <p>
-            I'd love to hear from you. Feel free to get in touch.
+            Welcome to OLAM by Plasseril.
+            Discover our story, explore what we offer,
+            and connect with us.
         </p>
 
-        <div class="contact-buttons">
+        <a href="#about" class="button">
+            Discover More
+        </a>
 
-            <a href="mailto:olambyplasseril@gmail.com" class="button">
-                Email Me
-            </a>
+    </div>
 
-            <a href="https://wa.me/9474241450" class="button">
-                WhatsApp
-            </a>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- ===== FOOTER ===== -->
+<!-- ===== ABOUT ===== -->
 
-    <footer>
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About OLAM by Plasseril
+    </h2>
+
+    <div class="about-content">
 
         <p>
-            © 2026 Your Name. All Rights Reserved.
+            Welcome to OLAM by Plasseril. This section is where you can
+            introduce your brand, business, vision, and story. Share what
+            makes OLAM by Plasseril unique and why customers should
+            choose you.
         </p>
 
-    </footer>
+    </div>
+
+</section>
+
+
+<!-- ===== SERVICES ===== -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        What We Offer
+    </h2>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <h3>Service One</h3>
+            <p>
+                Add a description of your first service or product here.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Service Two</h3>
+            <p>
+                Add a description of your second service or product here.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Service Three</h3>
+            <p>
+                Add a description of your third service or product here.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p>
+        We'd love to hear from you. Feel free to get in touch with
+        OLAM by Plasseril.
+    </p>
+
+    <div class="contact-buttons">
+
+        <a href="mailto:olambyplasseril@gmail.com" class="button">
+            Email Us
+        </a>
+
+        <a href="https://wa.me/9474241450" class="button">
+            WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <p>
+        © 2026 OLAM by Plasseril. All Rights Reserved.
+    </p>
+
+</footer>
+```
 
 </body>
 </html>
