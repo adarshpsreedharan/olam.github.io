@@ -1,1472 +1,536 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>OLAM by Plasseril | A Home Away From Home</title>
+    <title>OLAM by Plasseril | A Home Away From Home</title>
 
-<meta name="description"
-      content="Welcome to OLAM by Plasseril — a peaceful homestay offering comfort, warmth and an authentic stay experience.">
+    <meta
+        name="description"
+        content="OLAM by Plasseril — a warm and peaceful homestay surrounded by the natural beauty of Kerala."
+    >
 
-<style>
+    <!-- Google Fonts fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Georgia, "Times New Roman", serif;
-        background: #f5f2eb;
-        color: #25251f;
-        line-height: 1.7;
-        overflow-x: hidden;
-    }
-
-    img {
-        width: 100%;
-        display: block;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
-    :root {
-        --dark: #20251f;
-        --green: #344b3a;
-        --light: #f5f2eb;
-        --cream: #ebe5d8;
-        --white: #ffffff;
-    }
-
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-    .navbar {
-
-        position: fixed;
-
-        top: 0;
-
-        left: 0;
-
-        width: 100%;
-
-        padding: 25px 5%;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        z-index: 1000;
-
-        color: white;
-
-        transition: 0.4s;
-
-    }
-
-    .navbar.scrolled {
-
-        background: rgba(245, 242, 235, 0.96);
-
-        color: var(--dark);
-
-        padding: 18px 5%;
-
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-
-    }
-
-    .logo {
-
-        font-size: 25px;
-
-        font-weight: bold;
-
-        letter-spacing: 3px;
-
-    }
-
-    .logo span {
-
-        display: block;
-
-        font-size: 10px;
-
-        letter-spacing: 4px;
-
-        font-weight: normal;
-
-        text-align: center;
-
-    }
-
-    .nav-links {
-
-        display: flex;
-
-        gap: 35px;
-
-        list-style: none;
-
-        font-family: Arial, sans-serif;
-
-        font-size: 13px;
-
-        text-transform: uppercase;
-
-        letter-spacing: 1px;
-
-    }
-
-    .nav-links a {
-
-        position: relative;
-
-    }
-
-    .nav-links a::after {
-
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-
-        bottom: -6px;
-
-        width: 0;
-
-        height: 1px;
-
-        background: currentColor;
-
-        transition: 0.3s;
-
-    }
-
-    .nav-links a:hover::after {
-
-        width: 100%;
-
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-
-        height: 100vh;
-
-        min-height: 650px;
-
-        position: relative;
-
-        background-image:
-
-            linear-gradient(
-                rgba(0,0,0,0.25),
-                rgba(0,0,0,0.35)
-            ),
-
-            url("https://github.com/adarshpsreedharan/olam.github.io/blob/37192c911fadd0e181a2f3798071cfc836b06ca3/PHOTO-2026-07-22-17-09-03.jpg");
-
-        background-size: cover;
-
-        background-position: center;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        text-align: center;
-
-        color: white;
-
-    }
-
-    .hero-content {
-
-        max-width: 850px;
-
-        padding: 20px;
-
-        animation: fadeUp 1.5s ease;
-
-    }
-
-    .hero-small {
-
-        font-family: Glacial indifference, glacial indifference;
-
-        text-transform: uppercase;
-
-        letter-spacing: 5px;
-
-        font-size: 12px;
-
-        margin-bottom: 20px;
-
-    }
-
-    .hero h1 {
-
-        font-size: clamp(55px, 9vw, 120px);
-
-        font-weight: normal;
-
-        line-height: 0.95;
-
-        margin-bottom: 25px;
-
-    }
-
-    .hero p {
-
-        font-size: 20px;
-
-        max-width: 650px;
-
-        margin: auto;
-
-    }
-
-    .hero-button {
-
-        display: inline-block;
-
-        margin-top: 35px;
-
-        padding: 15px 35px;
-
-        border: 1px solid white;
-
-        font-family: Glacial indifference, glacial indifference;
-
-        font-size: 12px;
-
-        text-transform: uppercase;
-
-        letter-spacing: 2px;
-
-        transition: 0.4s;
-
-    }
-
-    .hero-button:hover {
-
-        background: white;
-
-        color: var(--dark);
-
-    }
-
-    .scroll-down {
-
-        position: absolute;
-
-        bottom: 30px;
-
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        font-family: Arial, sans-serif;
-
-        font-size: 11px;
-
-        text-transform: uppercase;
-
-        letter-spacing: 3px;
-
-    }
-
-
-    /* =========================================================
-       INTRODUCTION
-    ========================================================= */
-
-    .intro {
-
-        padding: 150px 10%;
-
-        text-align: center;
-
-        background: var(--light);
-
-    }
-
-    .eyebrow {
-
-        font-family: Arial, sans-serif;
-
-        font-size: 11px;
-
-        letter-spacing: 4px;
-
-        text-transform: uppercase;
-
-        color: var(--green);
-
-        margin-bottom: 25px;
-
-    }
-
-    .intro h2 {
-
-        font-size: clamp(35px, 5vw, 65px);
-
-        font-weight: normal;
-
-        line-height: 1.15;
-
-        max-width: 900px;
-
-        margin: auto;
-
-    }
-
-    .intro p {
-
-        max-width: 700px;
-
-        margin: 35px auto 0;
-
-        font-size: 18px;
-
-        color: #555;
-
-    }
-
-
-    /* =========================================================
-       IMAGE + TEXT SECTION
-    ========================================================= */
-
-    .story {
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        min-height: 700px;
-
-    }
-
-    .story-image {
-
-        background-image:
-
-            url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=90");
-
-        background-size: cover;
-
-        background-position: center;
-
-        min-height: 600px;
-
-    }
-
-    .story-text {
-
-        background: var(--green);
-
-        color: white;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        padding: 10%;
-
-    }
-
-    .story-text h2 {
-
-        font-size: clamp(35px, 4vw, 60px);
-
-        font-weight: normal;
-
-        line-height: 1.1;
-
-        margin-bottom: 30px;
-
-    }
-
-    .story-text p {
-
-        font-size: 17px;
-
-        color: #e8e8e8;
-
-        margin-bottom: 20px;
-
-    }
-
-
-    /* =========================================================
-       STAY SECTION
-    ========================================================= */
-
-    .stay {
-
-        padding: 140px 7%;
-
-        background: var(--cream);
-
-    }
-
-    .section-heading {
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: end;
-
-        margin-bottom: 60px;
-
-    }
-
-    .section-heading h2 {
-
-        font-size: clamp(40px, 6vw, 75px);
-
-        font-weight: normal;
-
-        line-height: 1;
-
-    }
-
-    .section-heading p {
-
-        max-width: 350px;
-
-        font-size: 16px;
-
-    }
-
-    .rooms {
-
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 30px;
-
-    }
-
-    .room {
-
-        position: relative;
-
-        overflow: hidden;
-
-        background: white;
-
-    }
-
-    .room img {
-
-        height: 550px;
-
-        object-fit: cover;
-
-        transition: transform 0.8s;
-
-    }
-
-    .room:hover img {
-
-        transform: scale(1.04);
-
-    }
-
-    .room-info {
-
-        padding: 25px;
-
-    }
-
-    .room-info h3 {
-
-        font-size: 28px;
-
-        font-weight: normal;
-
-        margin-bottom: 10px;
-
-    }
-
-    .room-info p {
-
-        color: #666;
-
-    }
-
-
-    /* =========================================================
-       AMENITIES
-    ========================================================= */
-
-    .amenities {
-
-        padding: 140px 10%;
-
-        background: var(--light);
-
-        text-align: center;
-
-    }
-
-    .amenities h2 {
-
-        font-size: clamp(40px, 6vw, 75px);
-
-        font-weight: normal;
-
-        margin-bottom: 70px;
-
-    }
-
-    .amenity-grid {
-
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 1px;
-
-        background: #cfcabf;
-
-        max-width: 1100px;
-
-        margin: auto;
-
-    }
-
-    .amenity {
-
-        background: var(--light);
-
-        padding: 45px 25px;
-
-    }
-
-    .amenity h3 {
-
-        font-size: 22px;
-
-        font-weight: normal;
-
-        margin-bottom: 10px;
-
-    }
-
-    .amenity p {
-
-        font-family: Arial, sans-serif;
-
-        font-size: 13px;
-
-        color: #666;
-
-    }
-
-
-    /* =========================================================
-       GALLERY
-    ========================================================= */
-
-    .gallery {
-
-        padding: 120px 5%;
-
-        background: var(--dark);
-
-        color: white;
-
-    }
-
-    .gallery-heading {
-
-        text-align: center;
-
-        margin-bottom: 60px;
-
-    }
-
-    .gallery-heading h2 {
-
-        font-size: clamp(45px, 7vw, 90px);
-
-        font-weight: normal;
-
-    }
-
-    .gallery-grid {
-
-        display: grid;
-
-        grid-template-columns: repeat(12, 1fr);
-
-        grid-auto-rows: 250px;
-
-        gap: 15px;
-
-    }
-
-    .gallery-item {
-
-        overflow: hidden;
-
-    }
-
-    .gallery-item img {
-
-        height: 100%;
-
-        object-fit: cover;
-
-        transition: transform 0.7s;
-
-    }
-
-    .gallery-item:hover img {
-
-        transform: scale(1.05);
-
-    }
-
-    .gallery-item:nth-child(1) {
-
-        grid-column: span 7;
-
-        grid-row: span 2;
-
-    }
-
-    .gallery-item:nth-child(2) {
-
-        grid-column: span 5;
-
-    }
-
-    .gallery-item:nth-child(3) {
-
-        grid-column: span 5;
-
-    }
-
-    .gallery-item:nth-child(4) {
-
-        grid-column: span 4;
-
-    }
-
-    .gallery-item:nth-child(5) {
-
-        grid-column: span 4;
-
-    }
-
-    .gallery-item:nth-child(6) {
-
-        grid-column: span 4;
-
-    }
-
-
-    /* =========================================================
-       LOCATION
-    ========================================================= */
-
-    .location {
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        min-height: 650px;
-
-    }
-
-    .location-text {
-
-        padding: 10%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        background: var(--cream);
-
-    }
-
-    .location-text h2 {
-
-        font-size: clamp(45px, 6vw, 80px);
-
-        font-weight: normal;
-
-        line-height: 1;
-
-        margin-bottom: 30px;
-
-    }
-
-    .location-text p {
-
-        max-width: 500px;
-
-        margin-bottom: 25px;
-
-    }
-
-    .map-button {
-
-        display: inline-block;
-
-        width: fit-content;
-
-        padding: 14px 30px;
-
-        background: var(--green);
-
-        color: white;
-
-        font-family: Arial, sans-serif;
-
-        font-size: 12px;
-
-        text-transform: uppercase;
-
-        letter-spacing: 2px;
-
-    }
-
-    .location-image {
-
-        background-image:
-
-            url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=90");
-
-        background-size: cover;
-
-        background-position: center;
-
-    }
-
-
-    /* =========================================================
-       BOOKING
-    ========================================================= */
-
-    .booking {
-
-        padding: 150px 10%;
-
-        text-align: center;
-
-        background:
-
-            linear-gradient(
-                rgba(20,30,24,0.65),
-                rgba(20,30,24,0.65)
-            ),
-
-            url("https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=2000&q=90");
-
-        background-size: cover;
-
-        background-position: center;
-
-        color: white;
-
-    }
-
-    .booking h2 {
-
-        font-size: clamp(50px, 8vw, 100px);
-
-        font-weight: normal;
-
-        line-height: 1;
-
-        margin-bottom: 30px;
-
-    }
-
-    .booking p {
-
-        font-size: 19px;
-
-        max-width: 600px;
-
-        margin: auto;
-
-    }
-
-    .booking-buttons {
-
-        margin-top: 40px;
-
-    }
-
-    .booking-button {
-
-        display: inline-block;
-
-        padding: 16px 35px;
-
-        margin: 5px;
-
-        border: 1px solid white;
-
-        font-family: Arial, sans-serif;
-
-        font-size: 12px;
-
-        letter-spacing: 2px;
-
-        text-transform: uppercase;
-
-        transition: 0.4s;
-
-    }
-
-    .booking-button:hover {
-
-        background: white;
-
-        color: var(--dark);
-
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-
-        padding: 70px 7% 30px;
-
-        background: #171b17;
-
-        color: white;
-
-    }
-
-    .footer-top {
-
-        display: flex;
-
-        justify-content: space-between;
-
-        flex-wrap: wrap;
-
-        gap: 50px;
-
-        margin-bottom: 80px;
-
-    }
-
-    .footer-logo {
-
-        font-size: 35px;
-
-        letter-spacing: 3px;
-
-    }
-
-    .footer-column h3 {
-
-        font-family: Arial, sans-serif;
-
-        font-size: 11px;
-
-        text-transform: uppercase;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 20px;
-
-        color: #aaa;
-
-    }
-
-    .footer-column p,
-
-    .footer-column a {
-
-        display: block;
-
-        margin-bottom: 8px;
-
-        color: #ddd;
-
-        font-size: 14px;
-
-    }
-
-    .footer-bottom {
-
-        border-top: 1px solid #333;
-
-        padding-top: 25px;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        font-family: Arial, sans-serif;
-
-        font-size: 12px;
-
-        color: #888;
-
-    }
-
-
-    /* =========================================================
-       ANIMATION
-    ========================================================= */
-
-    @keyframes fadeUp {
-
-        from {
-
-            opacity: 0;
-
-            transform: translateY(30px);
-
-        }
-
-        to {
-
-            opacity: 1;
-
-            transform: translateY(0);
-
-        }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 768px) {
-
-        .nav-links {
-
-            display: none;
-
-        }
-
-        .navbar {
-
-            padding: 20px 6%;
-
-        }
-
-        .hero h1 {
-
-            font-size: 60px;
-
-        }
-
-        .hero p {
-
-            font-size: 17px;
-
-        }
-
-        .intro,
-
-        .stay,
-
-        .amenities,
-
-        .gallery,
-
-        .booking {
-
-            padding: 90px 7%;
-
-        }
-
-        .story,
-
-        .location {
-
-            grid-template-columns: 1fr;
-
-        }
-
-        .story-image,
-
-        .location-image {
-
-            min-height: 500px;
-
-        }
-
-        .section-heading {
-
-            display: block;
-
-        }
-
-        .section-heading p {
-
-            margin-top: 25px;
-
-        }
-
-        .rooms {
-
-            grid-template-columns: 1fr;
-
-        }
-
-        .room img {
-
-            height: 400px;
-
-        }
-
-        .amenity-grid {
-
-            grid-template-columns: 1fr;
-
-        }
-
-        .gallery-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            grid-auto-rows: 200px;
-
-        }
-
-        .gallery-item:nth-child(n) {
-
-            grid-column: span 1;
-
-            grid-row: span 1;
-
-        }
-
-        .gallery-item:first-child {
-
-            grid-column: span 2;
-
-        }
-
-        .footer-bottom {
-
-            flex-direction: column;
-
-            gap: 10px;
-
-        }
-
-    }
-
-</style>
-```
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-```
-<!-- =========================================================
+
+<!-- =====================================================
      NAVIGATION
-========================================================= -->
+===================================================== -->
 
-<nav class="navbar" id="navbar">
+<header class="navbar" id="navbar">
 
-    <a href="#home" class="logo">
+    <a href="#home" class="brand">
 
-        OLAM
-
-        <span>BY PLASSERIL</span>
+        <img
+            src="images/olam-logo.png"
+            alt="OLAM by Plasseril"
+        >
 
     </a>
 
-    <ul class="nav-links">
 
-        <li>
-            <a href="#about">Our Story</a>
-        </li>
+    <nav class="nav-menu" id="navMenu">
 
-        <li>
-            <a href="#stay">Stay</a>
-        </li>
+        <a href="#about">Our Story</a>
 
-        <li>
-            <a href="#gallery">Gallery</a>
-        </li>
+        <a href="#stay">Stay</a>
 
-        <li>
-            <a href="#location">Location</a>
-        </li>
+        <a href="#experience">Experience</a>
 
-        <li>
-            <a href="#booking">Book</a>
-        </li>
+        <a href="#gallery">Gallery</a>
 
-    </ul>
+        <a href="#location">Location</a>
 
-</nav>
+        <a href="#booking" class="nav-book">
+            Book Your Stay
+        </a>
+
+    </nav>
 
 
-<!-- =========================================================
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
 <section class="hero" id="home">
 
+    <div class="hero-overlay"></div>
+
+
     <div class="hero-content">
 
-        <div class="hero-small">
+        <p class="eyebrow hero-eyebrow">
             A Homestay by Plasseril
-        </div>
+        </p>
+
 
         <h1>
             OLAM
         </h1>
 
-        <p>
-            A peaceful place to pause, reconnect and feel at home.
+
+        <p class="hero-tagline">
+            A home away from home,
+            surrounded by nature.
         </p>
 
-        <a href="#about" class="hero-button">
+
+        <a
+            href="#about"
+            class="button button-light"
+        >
             Discover OLAM
         </a>
 
     </div>
 
-    <div class="scroll-down">
-        Scroll to explore
+
+    <div class="hero-scroll">
+
+        <span></span>
+
+        <p>
+            Scroll to explore
+        </p>
+
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     INTRO
-========================================================= -->
 
-<section class="intro" id="about">
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
 
-    <div class="eyebrow">
-        Welcome to OLAM
+<section class="intro section" id="about">
+
+    <div class="container intro-container">
+
+
+        <p class="eyebrow">
+            Welcome to OLAM
+        </p>
+
+
+        <h2>
+            Where the warmth of home
+            meets the beauty of Kerala.
+        </h2>
+
+
+        <div class="intro-text">
+
+            <p>
+                Tucked away amidst the tropical greenery of
+                Kerala, OLAM by Plasseril is a place to slow down,
+                breathe deeply and simply feel at home.
+            </p>
+
+            <p>
+                Created with warmth, comfort and genuine
+                hospitality at heart, OLAM welcomes you to
+                experience peaceful mornings, quiet evenings
+                and the simple beauty of staying close to nature.
+            </p>
+
+        </div>
+
     </div>
-
-    <h2>
-        Where the warmth of home meets the beauty of a getaway.
-    </h2>
-
-    <p>
-        OLAM by Plasseril is a place created for slow mornings,
-        peaceful evenings and meaningful moments. Come stay with us,
-        experience genuine hospitality and discover the charm of
-        your surroundings.
-    </p>
 
 </section>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      STORY
-========================================================= -->
+===================================================== -->
 
 <section class="story">
 
-    <div class="story-image"></div>
+    <div class="story-image">
 
-    <div class="story-text">
+        <img
+            src="images/living-room.jpg"
+            alt="Warm and cozy living room at OLAM by Plasseril"
+        >
 
-        <div class="eyebrow">
+    </div>
+
+
+    <div class="story-content">
+
+        <p class="eyebrow">
             The OLAM Experience
-        </div>
+        </p>
+
 
         <h2>
             Stay a while.
             Feel at home.
         </h2>
 
-        <p>
-            At OLAM, every detail is designed to create a comfortable
-            and memorable experience. Whether you are travelling with
-            family, friends or simply looking for a quiet escape,
-            our home welcomes you.
-        </p>
 
         <p>
-            Replace this text with the real story of your homestay,
-            its history, the Plasseril family and what makes OLAM
-            special.
+            At OLAM, we believe that the most memorable
+            journeys are often found in the simplest moments.
         </p>
+
+
+        <p>
+            A quiet morning with the sunlight filtering through
+            the trees. An evening spent surrounded by greenery.
+            A comfortable room to return to after a day of
+            exploring.
+        </p>
+
+
+        <p>
+            Whether you are travelling with family, friends,
+            or simply looking for a peaceful escape,
+            OLAM is a place where you can slow down and
+            reconnect.
+        </p>
+
+
+        <a
+            href="#stay"
+            class="text-link"
+        >
+            Explore your stay
+            <span>→</span>
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      STAY
-========================================================= -->
+===================================================== -->
 
-<section class="stay" id="stay">
+<section class="stay section" id="stay">
 
-    <div class="section-heading">
+    <div class="container">
 
-        <div>
 
-            <div class="eyebrow">
-                Your Stay
+        <div class="section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    Your Stay
+                </p>
+
+                <h2>
+                    Spaces made
+                    for slowing down.
+                </h2>
+
             </div>
 
+
+            <p class="section-description">
+
+                Thoughtfully arranged spaces,
+                natural surroundings and the
+                comfort of a home.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="stay-grid">
+
+
+            <!-- Bedroom -->
+
+            <article class="stay-card large">
+
+                <div class="stay-image">
+
+                    <img
+                        src="images/bedroom.jpg"
+                        alt="Bedroom at OLAM by Plasseril"
+                    >
+
+                </div>
+
+
+                <div class="stay-info">
+
+                    <p class="card-number">
+                        01
+                    </p>
+
+                    <h3>
+                        The Guest Room
+                    </h3>
+
+                    <p>
+                        A peaceful space designed for
+                        restful nights and relaxed mornings.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Living -->
+
+            <article class="stay-card">
+
+                <div class="stay-image">
+
+                    <img
+                        src="images/living-room.jpg"
+                        alt="Living room at OLAM by Plasseril"
+                    >
+
+                </div>
+
+
+                <div class="stay-info">
+
+                    <p class="card-number">
+                        02
+                    </p>
+
+                    <h3>
+                        The Living Space
+                    </h3>
+
+                    <p>
+                        A warm and welcoming place to
+                        sit back, unwind and spend time together.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section
+    class="experience section"
+    id="experience"
+>
+
+    <div class="container">
+
+
+        <div class="experience-heading">
+
+            <p class="eyebrow">
+                The OLAM Experience
+            </p>
+
             <h2>
-                Stay with us.
+                The little things
+                make a stay memorable.
             </h2>
 
         </div>
 
-        <p>
-            Thoughtfully designed spaces for rest, relaxation
-            and memorable moments.
-        </p>
-
-    </div>
 
 
-    <div class="rooms">
+        <div class="experience-grid">
 
 
-        <div class="room">
+            <div class="experience-item">
 
-            <img
-                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=90"
-                alt="OLAM homestay bedroom"
-            >
-
-            <div class="room-info">
+                <span>01</span>
 
                 <h3>
-                    The Guest Room
+                    Peaceful Surroundings
                 </h3>
 
                 <p>
-                    A comfortable private space designed for
-                    peaceful nights and relaxed mornings.
+                    Wake up to tropical greenery,
+                    swaying palms and the quiet
+                    rhythm of nature.
                 </p>
 
             </div>
 
-        </div>
 
 
-        <div class="room">
+            <div class="experience-item">
 
-            <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90"
-                alt="OLAM living space"
-            >
-
-            <div class="room-info">
+                <span>02</span>
 
                 <h3>
-                    The Living Space
+                    A Homely Atmosphere
                 </h3>
 
                 <p>
-                    A welcoming space to unwind, connect and
-                    enjoy the warmth of a home away from home.
+                    Enjoy the comfort and warmth
+                    of a thoughtfully cared-for home.
                 </p>
 
             </div>
 
-        </div>
 
+
+            <div class="experience-item">
+
+                <span>03</span>
+
+                <h3>
+                    Garden & Greenery
+                </h3>
+
+                <p>
+                    Spend time surrounded by
+                    plants, flowers and the natural
+                    beauty of Kerala.
+                </p>
+
+            </div>
+
+
+
+            <div class="experience-item">
+
+                <span>04</span>
+
+                <h3>
+                    Space to Unwind
+                </h3>
+
+                <p>
+                    Find a quiet corner to read,
+                    relax, talk or simply do nothing.
+                </p>
+
+            </div>
+
+
+
+            <div class="experience-item">
+
+                <span>05</span>
+
+                <h3>
+                    Convenient Parking
+                </h3>
+
+                <p>
+                    Enjoy easy and convenient
+                    parking during your stay.
+                </p>
+
+            </div>
+
+
+
+            <div class="experience-item">
+
+                <span>06</span>
+
+                <h3>
+                    Genuine Hospitality
+                </h3>
+
+                <p>
+                    Stay with people who care
+                    about making you feel welcome.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     AMENITIES
-========================================================= -->
 
-<section class="amenities">
-
-    <div class="eyebrow">
-        Comfort & Convenience
-    </div>
-
-    <h2>
-        Everything you need.
-    </h2>
-
-
-    <div class="amenity-grid">
-
-
-        <div class="amenity">
-
-            <h3>
-                Comfortable Rooms
-            </h3>
-
-            <p>
-                Relax in thoughtfully prepared guest spaces.
-            </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-            <h3>
-                Free Wi-Fi
-            </h3>
-
-            <p>
-                Stay connected throughout your visit.
-            </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-            <h3>
-                Parking
-            </h3>
-
-            <p>
-                Convenient parking for our guests.
-            </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-            <h3>
-                Homely Hospitality
-            </h3>
-
-            <p>
-                Experience the warmth of genuine hospitality.
-            </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-            <h3>
-                Peaceful Surroundings
-            </h3>
-
-            <p>
-                Slow down and enjoy your surroundings.
-            </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-            <h3>
-                Local Experiences
-            </h3>
-
-            <p>
-                Discover the places and culture around OLAM.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
+<!-- =====================================================
      GALLERY
-========================================================= -->
+===================================================== -->
 
 <section class="gallery" id="gallery">
 
-    <div class="gallery-heading">
+    <div class="gallery-header">
 
-        <div class="eyebrow">
+        <p class="eyebrow">
             Moments at OLAM
-        </div>
+        </p>
 
         <h2>
-            A glimpse of your stay.
+            A glimpse of
+            your stay.
         </h2>
 
     </div>
+
 
 
     <div class="gallery-grid">
 
 
-        <div class="gallery-item">
+        <div class="gallery-item gallery-large">
 
             <img
-                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=90"
-                alt="OLAM homestay"
+                src="images/living-room.jpg"
+                alt="OLAM living room"
             >
 
         </div>
@@ -1475,8 +539,8 @@
         <div class="gallery-item">
 
             <img
-                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=90"
-                alt="Homestay interior"
+                src="images/veranda.jpg"
+                alt="OLAM veranda"
             >
 
         </div>
@@ -1485,8 +549,8 @@
         <div class="gallery-item">
 
             <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=90"
-                alt="Homestay room"
+                src="images/bedroom.jpg"
+                alt="OLAM bedroom"
             >
 
         </div>
@@ -1495,8 +559,8 @@
         <div class="gallery-item">
 
             <img
-                src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1000&q=90"
-                alt="Comfortable bedroom"
+                src="images/courtyard.jpg"
+                alt="OLAM courtyard"
             >
 
         </div>
@@ -1505,18 +569,18 @@
         <div class="gallery-item">
 
             <img
-                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=90"
-                alt="Nature near homestay"
+                src="images/garden.jpg"
+                alt="OLAM tropical garden"
             >
 
         </div>
 
 
-        <div class="gallery-item">
+        <div class="gallery-item gallery-wide">
 
             <img
-                src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=90"
-                alt="Peaceful surroundings"
+                src="images/exterior-1.jpg"
+                alt="OLAM homestay exterior"
             >
 
         </div>
@@ -1527,123 +591,168 @@
 </section>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      LOCATION
-========================================================= -->
+===================================================== -->
 
-<section class="location" id="location">
+<section
+    class="location section"
+    id="location"
+>
 
-    <div class="location-text">
+    <div class="location-image">
 
-        <div class="eyebrow">
+        <img
+            src="images/exterior-2.jpg"
+            alt="OLAM by Plasseril surrounded by greenery"
+        >
+
+    </div>
+
+
+    <div class="location-content">
+
+        <p class="eyebrow">
             Find Us
-        </div>
+        </p>
+
 
         <h2>
-            Come find your way to OLAM.
+            Come find
+            your way to OLAM.
         </h2>
 
-        <p>
-            Located in a peaceful setting, OLAM by Plasseril
-            offers the perfect base for your next getaway.
-        </p>
 
         <p>
-            <strong>
-                📍 Plasseril Veedu, Perugalam Road, Kandramkani, Pattomthuruthu PO, Munrothuruthu, Kollam, Kerala, India - 691601
-            </strong>
+            Located in the peaceful surroundings of
+            Munrothuruthu, Kollam, OLAM by Plasseril
+            offers a relaxing base to experience the
+            beauty and charm of Kerala.
         </p>
 
-        <!-- Replace # with your Google Maps link -->
+
+        <address>
+
+            Plasseril Veedu,<br>
+
+            Perugalam Road,<br>
+
+            Kandramkani,<br>
+
+            Pattomthuruthu PO,<br>
+
+            Munrothuruthu,<br>
+
+            Kollam, Kerala,<br>
+
+            India – 691601
+
+        </address>
+
 
         <a
-            href="#"
-            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=Plasseril+Veedu+Perugalam+Road+Kandramkani+Pattomthuruthu+Munrothuruthu+Kollam+Kerala"
             target="_blank"
+            class="button button-dark"
         >
             View on Google Maps
         </a>
 
     </div>
 
-    <div class="location-image"></div>
-
 </section>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      BOOKING
-========================================================= -->
+===================================================== -->
 
-<section class="booking" id="booking">
+<section
+    class="booking"
+    id="booking"
+>
 
-    <div class="eyebrow">
-        Your Stay Awaits
-    </div>
-
-    <h2>
-        Come stay with us.
-    </h2>
-
-    <p>
-        Planning your next escape ?
-        Get in touch with us to check availability
-        and reserve your stay at OLAM by Plasseril.
-    </p>
+    <div class="booking-overlay"></div>
 
 
-    <div class="booking-buttons">
+    <div class="booking-content">
 
-        <a
-            href="mailto:olambyplasseril@gmail.com"
-            class="booking-button"
-        >
-            Email Us
-        </a>
+        <p class="eyebrow">
+            Your Stay Awaits
+        </p>
 
-        <!-- Replace the number below with your correct
-             international WhatsApp number -->
 
-        <a
-            href="https://wa.me/9474241450"
-            class="booking-button"
-            target="_blank"
-        >
-            WhatsApp Us
-        </a>
+        <h2>
+            Come stay with us.
+        </h2>
+
+
+        <p>
+            Planning your next escape?
+            Get in touch with us to check availability
+            and reserve your stay at OLAM by Plasseril.
+        </p>
+
+
+        <div class="booking-buttons">
+
+
+            <a
+                href="mailto:olambyplasseril@gmail.com"
+                class="button button-light"
+            >
+                Email Us
+            </a>
+
+
+            <a
+                href="https://wa.me/919474241450"
+                target="_blank"
+                class="button button-outline"
+            >
+                WhatsApp Us
+            </a>
+
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
-    <div class="footer-top">
+    <div class="footer-container">
 
 
-        <div class="footer-logo">
+        <div class="footer-brand">
 
-            OLAM
+            <img
+                src="images/olam-logo.png"
+                alt="OLAM by Plasseril logo"
+            >
 
-            <br>
-
-            <small>
-               by Plasseril
-            </small>
+            <p>
+                A home away from home.
+            </p>
 
         </div>
 
 
+
         <div class="footer-column">
 
-            <h3>
+            <h4>
                 Explore
-            </h3>
+            </h4>
 
             <a href="#about">
                 Our Story
@@ -1658,28 +767,32 @@
             </a>
 
             <a href="#location">
-                Location : Plasseril Veedu, Perugalam Road, Kandramkani, Pattomthuruthu PO, Munrothuruthu, Kollam, Kerala, India - 691601
+                Location
             </a>
 
         </div>
 
 
+
         <div class="footer-column">
 
-            <h3>
-                Contact us on
-            </h3>
-
-            <p>
-                Instagram - stay.olam
-            </p>
+            <h4>
+                Contact
+            </h4>
 
             <a href="mailto:olambyplasseril@gmail.com">
-                Email - olambyplasseril@gmail.com
+                olambyplasseril@gmail.com
             </a>
 
-            <a href="https://wa.me/9474241450">
-                WhatsApp - 9474241450
+            <a
+                href="https://wa.me/919474241450"
+                target="_blank"
+            >
+                WhatsApp
+            </a>
+
+            <a href="#">
+                Instagram
             </a>
 
         </div>
@@ -1688,48 +801,24 @@
     </div>
 
 
+
     <div class="footer-bottom">
 
-        <span>
+        <p>
             © 2026 OLAM by Plasseril
-        </span>
+        </p>
 
-        <span>
+        <p>
             A home away from home.
-        </span>
+        </p>
 
     </div>
 
 </footer>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
-<script>
-
-    /* Change navigation appearance when scrolling */
-
-    window.addEventListener("scroll", function() {
-
-        const navbar =
-            document.getElementById("navbar");
-
-        if (window.scrollY > 80) {
-
-            navbar.classList.add("scrolled");
-
-        } else {
-
-            navbar.classList.remove("scrolled");
-
-        }
-
-    });
-
-</script>
-```
+<script src="script.js"></script>
 
 </body>
 
